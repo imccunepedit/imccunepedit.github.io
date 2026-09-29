@@ -11,13 +11,13 @@ prose and designed a larger 76 key concave keyboard where even thought
 fingers needed to move more the keys were positioned so I didn't have to
 reach as far.
 
-![Finished](img/KeyboardPCB.jpeg)
-![PCB](img/KeyboardPCB-Board.jpeg)
-![Assembling](img/KeyboardPCB-Assem.jpeg)
+![Finished](img/KeyboardPCB.jpg)
+![PCB](img/KeyboardPCB-Board.jpg)
+![Assembling](img/KeyboardPCB-Assem.jpg)
 
 ### Concave Keyboard
-![Finished](img/KeyboardErgo.jpeg)
-![Wiring](img/KeyboardErgo-Bottom.jpeg)
+![Finished](img/KeyboardErgo.jpg)
+![Wiring](img/KeyboardErgo-Bottom.jpg)
 
 ## Motorized MIDI Faders
 
@@ -30,8 +30,8 @@ is changed it sends that to the microcontroller which then moves the
 fader using closed loop control.
 Video of it in action:
 
-![image](img/Faders.jpeg)
-![image](img/FadersController.jpeg)
+![image](img/Faders.jpg)
+![image](img/FadersController.jpg)
 <video controls width="800">
   <source src="img/Faders.mp4" type="video/mp4">
   Your browser does not support the video tag.
