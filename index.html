@@ -2,7 +2,63 @@
 <html>
 
 <head>
-<title>Ilya McCune-Pedit</title>
+  <title>Ilya McCune-Pedit</title>
+
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #f5f5f5;
+    }
+
+    /* Main content width */
+    body {
+        max-width: 900px;
+        margin: auto;
+    }
+
+
+    /* Text blocks */
+
+    p {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        font-size: 1.1rem;
+    }
+
+
+    /* Images */
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 30px auto;
+        border-radius: 8px;
+    }
+
+
+    /* Videos */
+
+    video {
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        border-radius: 8px;
+        background: black;
+    }
+  </style>
+
 </head>
    
 <body>
@@ -22,7 +78,7 @@
 
 <h3 id="minimal-pcb-keyboard">Minimal PCB Keyboard</h3>
 <p>
-  <img src="img/KeyboardPCB.jpg" alt="Finished" />
+  <img src="img/KeyboardPCB.jpg" alt="Finished" class="im"/>
   <img src="img/KeyboardPCB-Board.jpg" alt="PCB" />
   <img src="img/KeyboardPCB-Assem.jpg" alt="Assembling" />
 </p>
@@ -44,12 +100,9 @@
   fader using closed loop control. Video of it in action:
 </p>
 <p>
-  <img src="img/Faders.jpg" alt="image" />
-  <img src="img/FadersController.jpg" alt="image" />
-  <video controls width="800">
-    <source src="img/Faders.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="img/Faders.jpg" alt="Finished" />
+  <img src="img/FadersController.jpg" alt="Fader Internals" />
+  <video controls src="img/Faders.mp4" type="video/mp4"></video>
 </p>
 
 <h2 id="software-pathtracer">Software Pathtracer</h2>
@@ -79,14 +132,8 @@
   responsible for selecting and integrating stepper motors, configuring
   drivers, and relay logic to control the plasma cutter. Video of the
   machine in action:
-  <video controls width="800">
-    <source src="img/TubeNotcher-Cut.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <video controls width="800">
-    <source src="img/TubeNotcher-Spin.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <video controls src="img/TubeNotcher-Cut.mp4" type="video/mp4"></video>
+  <video controls src="img/TubeNotcher-Spin.mp4" type="video/mp4"></video>
   <img src="img/TubeNotcher-Example.jpg" alt="Test Fitment of cut pieces" />
 </p>
 
