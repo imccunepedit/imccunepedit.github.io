@@ -10,6 +10,7 @@
 
 <h1 id="ilya-mccune-pedit">Ilya McCune-Pedit</h1>
 
+<div>
 <h2 id="plasma-tube-notcher">CNC Plasma Tube Notcher</h2>
 <p>
   Won first place in the senior design capstone competition.
@@ -17,20 +18,18 @@
   Most commercial tube notchers that we found are at least as long as the largest tube they can cut. We wanted to create something much smaller, so that it could be stored in the campus makerspace but still cut long tubes.
   The final design we settled on uses a welding chuck with modified jaws that hold rollerblade wheels.
   The chuck is driven by a belt from a stepper motor for rotation of the pipe, and one of the roller blade wheels has motor on it for axial movement of the pipe.
-  As the electrical design lead for the team I was responsible for selecting and integrating the stepper motors, configuring drivers on the control PC, and figuring out the relay logic to control the plasma cutting head.
-  <a href="docs/Capstone.pdf">Competition Poster</a>
+  As the electrical design lead for the team I was primarily responsible for selecting and integrating the stepper motors, configuring drivers on the control PC, and figuring out the relay logic to control the plasma cutting head.
+
 </p>
+<p>
+  <a href="docs/Capstone.pdf">Here</a> is the competition poster. Below are two videos of the machine, and an image of a test fit from sompe pipes we cut.
 <video controls src="img/TubeNotcher-Cut.mp4" type="video/mp4"></video>
 <video controls src="img/TubeNotcher-Spin.mp4" type="video/mp4"></video>
 <img src="img/TubeNotcher-Example.jpg" alt="Test Fitment of cut pieces"/>
+</div>
 
-
-<h2 id="keyboards">Keyboards</h2>
-<p>
-  Two different ideas on ergonomic keboards.
-</p>
-
-<h3 id="minimal-pcb-keyboard">Minimal PCB Keyboard</h3>
+<div>
+<h2 id="minimal-pcb-keyboard">Minimal PCB Keyboard</h3>
 <p>
   The first keyboard is based on the idea of removing almost all keys that are not one key space away from the home row, and giving the thumbs more keys to press (instead of just space).
   The base of the keyboard is a 2 layer PCB with mounting holes for choc keyswitches.
@@ -49,8 +48,10 @@
 <img src="img/KeyboardPCB-Board.jpg" alt="PCB"/>
 <img src="img/KeyboardPCB-Assem.jpg" alt="Assembling"/>
 <img src="img/KeyboardPCB.jpg" alt="Finished"/>
+</div>
 
-<h3 id="concave-keyboard">Concave Keyboard</h3>
+<div>
+<h2 id="concave-keyboard">Concave Keyboard</h3>
 
 <p>
   After using the first keyboard for a few months, the lack of keys and therefore the finger gymnastics needed to type pretty much any character that was not a-z, A-Z, and 0-9 and a few frequently used keys proved to be a problem especially when trying to write code where many special characters are sometimes needed, or do CAD work where many shortcuts assume you have a full keyboard. These issues, along with a bunch of other improvements I thought I could make led me to try and design a second keyboard.
@@ -67,7 +68,8 @@
 
 <img src="img/KeyboardErgo.jpg" alt="Finished"/>
 <img src="img/KeyboardErgo-Bottom.jpg" alt="Wiring"/>
-
+</div>
+<div>
 <h2 id="motorized-midi-faders">Motorized MIDI Faders</h2>
 <p>
   Created a bank of MIDI sliders that communicate via USB-C to audio production software on a computer.
@@ -81,6 +83,9 @@
 <img src="img/FadersController.jpg" alt="Fader Internals" />
 <video controls src="img/Faders.mp4" type="video/mp4"></video>
 
+</div>
+
+<div>
 <h2 id="software-pathtracer">Software Pathtracer</h2>
 <p>
   Created a software graphics engine in C++, that simulates rays of light bouncing off spheres and planes to create images.
@@ -105,6 +110,7 @@
 
 <img src="img/Raytracer.png" alt="image"/>
 
+</div>
 
 </body>
 </html>
