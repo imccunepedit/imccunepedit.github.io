@@ -2,140 +2,109 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="style.css">
   <title>Ilya McCune-Pedit</title>
-
-  <style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        padding: 40px 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        color: #222;
-        background: #f5f5f5;
-    }
-
-    /* Main content width */
-    body {
-        max-width: 900px;
-        margin: auto;
-    }
-
-
-    /* Text blocks */
-
-    p {
-        background: white;
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 8px;
-        font-size: 1.1rem;
-    }
-
-
-    /* Images */
-
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 30px auto;
-        border-radius: 8px;
-    }
-
-
-    /* Videos */
-
-    video {
-        display: block;
-        width: 100%;
-        max-width: 900px;
-        margin: 30px auto;
-        border-radius: 8px;
-        background: black;
-    }
-  </style>
-
 </head>
    
 <body>
 
 <h1 id="ilya-mccune-pedit">Ilya McCune-Pedit</h1>
+
+<h2 id="plasma-tube-notcher">CNC Plasma Tube Notcher</h2>
+<p>
+  Won first place in the senior design capstone competition.
+  I teamed up with 5 other seniors to design a small form factor cnc plasma tube notcher for our mechanical engineering senior capstone project.
+  Most commercial tube notchers that we found are at least as long as the largest tube they can cut. We wanted to create something much smaller, so that it could be stored in the campus makerspace but still cut long tubes.
+  The final design we settled on uses a welding chuck with modified jaws that hold rollerblade wheels.
+  The chuck is driven by a belt from a stepper motor for rotation of the pipe, and one of the roller blade wheels has motor on it for axial movement of the pipe.
+  As the electrical design lead for the team I was responsible for selecting and integrating the stepper motors, configuring drivers on the control PC, and figuring out the relay logic to control the plasma cutting head.
+  <a href="docs/Capstone.pdf">Competition Poster</a>
+</p>
+<video controls src="img/TubeNotcher-Cut.mp4" type="video/mp4"></video>
+<video controls src="img/TubeNotcher-Spin.mp4" type="video/mp4"></video>
+<img src="img/TubeNotcher-Example.jpg" alt="Test Fitment of cut pieces"/>
+
+
 <h2 id="keyboards">Keyboards</h2>
 <p>
-  I engineered and manufactured a custom split keyboard system designed
-  to optimize typing ergonomics by minimizing finger travel and reducing
-  strain. Utilizing KiCad, I designed and routed a PCB that would work as
-  both a left hand and right hand keyboard. Later realized the downsides
-  of small keyboards when it came to doing anything other than writing
-  prose and designed a larger 76 key concave keyboard where even thought
-  fingers needed to move more the keys were positioned so I didn’t have to
-  reach as far.
+  Two different ideas on ergonomic keboards.
 </p>
 
 <h3 id="minimal-pcb-keyboard">Minimal PCB Keyboard</h3>
 <p>
-  <img src="img/KeyboardPCB.jpg" alt="Finished" class="im"/>
-  <img src="img/KeyboardPCB-Board.jpg" alt="PCB" />
-  <img src="img/KeyboardPCB-Assem.jpg" alt="Assembling" />
+  The first keyboard is based on the idea of removing almost all keys that are not one key space away from the home row, and giving the thumbs more keys to press (instead of just space).
+  The base of the keyboard is a 2 layer PCB with mounting holes for choc keyswitches.
+  Since the keyboard is split between the left and right hand the PCB was designed so that it would work for both hands.
+  Each half of the keyboard is controlled by a Seeed Studio XIAO RP2040 microcontrollers.
+  They communicate with each other via Bluetooth and can either communicate over USB or Bluetooth with a computer, phone, or tablet.
+  The left hand is considered the central device so it takes the keystrokes from both halves and sends the corresponding key codes to a computer.
+</p>
+<p>
+  The ZMK firmware library was used to configure the keyboards.
+  This included mapping columns and rows to the microcontroller pins, what collumn and row correspond to what physical key, and what the function of each key is.
+  Due to the lack of keys, certain keys could be held down to activate another layer and change the function of the rest of the keys on the keyboard effectively multiplying the number of keys I had to work with.
+  This is similar to how the shift key is used to type special characters from the number row.
 </p>
 
+<img src="img/KeyboardPCB-Board.jpg" alt="PCB"/>
+<img src="img/KeyboardPCB-Assem.jpg" alt="Assembling"/>
+<img src="img/KeyboardPCB.jpg" alt="Finished"/>
+
 <h3 id="concave-keyboard">Concave Keyboard</h3>
+
 <p>
-  <img src="img/KeyboardErgo.jpg" alt="Finished" />
-  <img src="img/KeyboardErgo-Bottom.jpg" alt="Wiring" />
+  After using the first keyboard for a few months, the lack of keys and therefore the finger gymnastics needed to type pretty much any character that was not a-z, A-Z, and 0-9 and a few frequently used keys proved to be a problem especially when trying to write code where many special characters are sometimes needed, or do CAD work where many shortcuts assume you have a full keyboard. These issues, along with a bunch of other improvements I thought I could make led me to try and design a second keyboard.
 </p>
+<p>
+  This keyboard was loosely based around a Dactyl Manuform, which is an opensource ergonomic keyboard.
+  Instead of removing keys that are too far away from the homerow to make it more comfortable, Dactyl keyboards have a concave shape so that fingers don't need to stretch or strain to reach further away keys.
+  One of the things I wanted to change from my original design was to have the keys not so exposed, which unfortunately many Dactyls share, so I used the parametric design of the dactyl to get a layout that felt comfortable to me, and then redesigned the frame from scratch in Solidworks using that as the layout.
+  Since I was increasing the key count to a more normal amount, this keyboard wasn't going to be very small and would just sit on my desk I decided to do away with the bluetooth functionality and have everything wired.
+  Additionally, due to the concave shape of the keyboard it was a lot simpler and cost effective to wire everything by hand.
+  Each half of the keybaord has an Adafruit kb2040 microcontroller, the left half sends its hardware button presses over uart to the right half which processes all the button presses and sends the keycodes over USB to anyconnected computer.
+</p>
+
+
+<img src="img/KeyboardErgo.jpg" alt="Finished"/>
+<img src="img/KeyboardErgo-Bottom.jpg" alt="Wiring"/>
 
 <h2 id="motorized-midi-faders">Motorized MIDI Faders</h2>
 <p>
-  My brother wanted extra faders for his midi keyboard and laptop. I
-  ordered replacement Behringer faders and wired up their potentiometers
-  and motors to a Teensy 4.0 microcontroller and drv8833 motor
-  contorllers. The sliders can be moved by hand and send MIDI control
-  commands over usbc to a connected computer. If a value on the computer
-  is changed it sends that to the microcontroller which then moves the
-  fader using closed loop control. Video of it in action:
+  Created a bank of MIDI sliders that communicate via USB-C to audio production software on a computer.
+  The sliders are Behringer X32 replacement faders, they have a linear potentiometer and a motor connected to the wiper.
+  The potentiometers are connected to a Teensy 4.0 microcontroller.
+  Additionally, the motors are controlled by 3 drv8833 motor drivers also connected to the Teensy.
+  The faders can be moved by hand, and they emit MIDI control commands that can then be mapped to values in a DAW.
+  If a value in the DAW is changed the Teensy recieves the control commands and using PD control loop with some additional deadzones uses the motors to move the sliders.
 </p>
-<p>
-  <img src="img/Faders.jpg" alt="Finished" />
-  <img src="img/FadersController.jpg" alt="Fader Internals" />
-  <video controls src="img/Faders.mp4" type="video/mp4"></video>
-</p>
+<img src="img/Faders.jpg" alt="Finished" />
+<img src="img/FadersController.jpg" alt="Fader Internals" />
+<video controls src="img/Faders.mp4" type="video/mp4"></video>
 
 <h2 id="software-pathtracer">Software Pathtracer</h2>
 <p>
-  Created a software graphics engine in C++, that simulated rays of
-  light bouncing off spheres and planes to create images based off of the
-  book <em>Ray Tracing in One Weekend</em>. All models are defined
-  mathematically and materials determine how a light ray interacts with
-  the surface once an intersection has been determined. Created 3 base
-  materials, glass/translucent, metallic/glossy, and a generic diffuse
-  material.
+  Created a software graphics engine in C++, that simulates rays of light bouncing off spheres and planes to create images.
+  I first followed the book <em>Ray Tracing in One Weekend</em> which renders to an image file, but then wanted to create something that was more interactive.
+  All models are defined mathematically and materials determine how a light ray interacts with the surface once an intersection has been determined.
+  Created 4 base materials: diffuse, glass/translucent, metallic, and a mix of a diffuse with a glossy coat ontop.
+  The app is made with OpenGL and GLFW, and uses Dear ImGui for control panels and display things.
+  OpenGL is only used very basically to have a window use Dear ImGui in.
+  The actual scene is rendered to an image and then displayed in Dear ImGui window.
 </p>
 <p>
-  Full code can be seen here, though it was left in the middle of
-  experimenting with other graphics apis.
-  <a href="https://github.com/imccunepedit/RyeTracer" class="uri">https://github.com/imccunepedit/RyeTracer</a>
+  During developement I experimented with various forms of data structures and rendering aproaches.
+  This included single material class with many parameters v.s. multiple types of material classes derived from a base class, similar ideas with single model v.s. different classes for plane, sphere or triangle, and using a recursive function to do the tracing of a ray on each bounce v.s. looping through the max number of bounces.
+  Additionaly, the consequences of virtual functions and repeatedly looping through large arrays of pointers became very obvious.
+</p>
+<p>
+  I have ideas to try and implement spectral rendering, so moving from RGB colors to tracing actual wave lengths, however I went on a tangent trying to learn Vulkan so that the path tracing could be offloaded to the GPU.
+</p>
+<p>
+  <a href="https://github.com/imccunepedit/RyeTracer" class="uri">Here</a> is the code, though it was left in a broken state and the Vulkan learning has been restarted seperately.
 </p>
 
-<p>
-<img src="img/Raytracer.png" alt="image" />
-</p>
+<img src="img/Raytracer.png" alt="image"/>
 
-<h2 id="plasma-tube-notcher">Plasma Tube Notcher</h2>
-<p>
-  I served as the Electrical Design Lead for a team of six design to
-  develop a functional, small-scale CNC plasma tube notcher. I was
-  responsible for selecting and integrating stepper motors, configuring
-  drivers, and relay logic to control the plasma cutter. Video of the
-  machine in action:
-  <video controls src="img/TubeNotcher-Cut.mp4" type="video/mp4"></video>
-  <video controls src="img/TubeNotcher-Spin.mp4" type="video/mp4"></video>
-  <img src="img/TubeNotcher-Example.jpg" alt="Test Fitment of cut pieces" />
-</p>
 
 </body>
 </html>
